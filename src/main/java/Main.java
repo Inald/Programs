@@ -12,6 +12,10 @@ public class Main {
         frame.setVisible(true);
         frame.setBounds(400, 400, 550, 400);
 
+        Setup(screen);
+    }
+
+    private static void Setup(Screen screen) {
         JComboBox cmbCurrency = screen.getCmbCurrency();
 
         cmbCurrency.getSelectedItem();
