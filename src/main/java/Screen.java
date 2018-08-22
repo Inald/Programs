@@ -41,6 +41,7 @@ public class Screen {
                  if(currency.equals("Dollars")){
                     String usd = getData("http://data.fixer.io/api/latest?access_key=237d9c939f1c58252c675ef0fa32bfd4","USD");
                      System.out.println(usd);
+                     txtConversion.setText(usd);
                  }else if(currency.equals("Lek")){
 
                 }else if(currency.equals("Euro")){
@@ -65,9 +66,11 @@ public class Screen {
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String inputLine;
 
-            //while((inputLine = in.readLine()) != null){
-
-            //}
+            while((inputLine = in.readLine()) != null){
+                if(inputLine.contains("USD")){
+                    rsp.append(inputLine.substring(3216,3222));
+                }
+            }
             in.close();
 
 
